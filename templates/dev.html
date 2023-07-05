@@ -1,0 +1,212 @@
+{% extends 'layout.html' %} {% block title %} Developer {% endblock %} {% block
+style %}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@100&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+/>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #fff;
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  .mainSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .container {
+    background-color: rgb(240, 105, 105);
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    margin: 5% auto;
+    border-radius: 50px;
+    padding: 1%;
+    text-align: center;
+    position: relative;
+  }
+
+  .content {
+    width: 100%;
+    height: 100%;
+    right: 0;
+    left: 0;
+  }
+
+  .profileImage {
+    border-radius: 50%;
+    border: 3px solid rgb(97, 44, 44);
+    padding: 1%;
+    margin: 2%;
+    margin-top: 4%;
+    background-color: black;
+  }
+
+  .mainName {
+    font-size: 25px;
+    font-weight: 700;
+    transition: color 0.5s;
+  }
+
+  .mainName:hover {
+    color: rgb(73, 3, 3);
+  }
+
+  .tagline {
+    font-weight: 600;
+    font-size: 16px;
+    color: black;
+    padding-top: 1%;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: white;
+    margin: 2%;
+  }
+
+  .button {
+    margin: 3% 1%;
+    font-size: 25px;
+    padding: 1.5%;
+    border-radius: 25px;
+    background-color: rgba(255, 53, 53, 0.7);
+    border-style: none;
+    background-color: #131010;
+    color: #ff8282;
+    transition: color 1s linear;
+  }
+
+  .button:hover {
+    color: #871717;
+  }
+
+  .footer {
+    font-size: 20px;
+    font-weight: 100;
+    color: rgb(47, 44, 44);
+  }
+
+  .footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer > ul > li {
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-right: 2px solid black;
+    padding: 0 10px;
+  }
+
+  .footer > ul > li:nth-child(3) {
+    border: none;
+  }
+
+  .rotation {
+    width: 105%;
+    height: 105%;
+    left: -11px;
+    bottom: 20px;
+    top: 16px;
+    border-radius: 50px;
+    position: absolute;
+    margin: auto;
+    z-index: -10;
+    --angle: 0deg;
+    filter: blur(20px);
+    opacity: 100%;
+    background-image: conic-gradient(
+      from var(--angle),
+      #ff008c,
+      #00ffea,
+      #ff0000,
+      #6200ff,
+      #00a2ff,
+      #ffae00,
+      #8c00ff,
+      #00ff44
+    );
+    animation: 5s rotate linear infinite;
+  }
+
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+</style>
+{% endblock %} {% block body %}
+<section class="mainSection">
+  <div class="container">
+    <div class="content">
+      <img
+        src="static/images/prof.png"
+        width="150px"
+        height="150px"
+        class="profileImage"
+      />
+      <p class="mainName">Tanzeel Khan</p>
+      <p class="tagline">ML Enthusiast & Web Developer</p>
+      <div class="icons">
+        <a href="#" class="icon" style="background: #3b5998"
+          ><i class="bi bi-facebook"></i
+        ></a>
+        <a href="#" class="icon" style="background: #d62976"
+          ><i class="bi bi-instagram"></i
+        ></a>
+        <a href="#" class="icon" style="background: #00acee"
+          ><i class="bi bi-twitter"></i
+        ></a>
+      </div>
+      <div>
+        <button class="button">Subscribe</button>
+        <button class="button">Message</button>
+      </div>
+      <div class="footer">
+        <ul>
+          <li><i class="bi bi-heart"></i>&nbsp;&nbsp;60K</li>
+          <li><i class="bi bi-chat-right"></i>&nbsp;&nbsp;20K</li>
+          <li><i class="bi bi-share"></i>&nbsp;&nbsp;50K</li>
+        </ul>
+      </div>
+    </div>
+    <div class="rotation"></div>
+  </div>
+</section>
+{% endblock %}
